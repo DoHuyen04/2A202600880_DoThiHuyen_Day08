@@ -1,17 +1,92 @@
 [
   {
     "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự?",
-    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc chất ma tuý khác với khối lượng tương đương.",
+    "expected_answer": "Theo khoản 1 Điều 249, người tàng trữ trái phép chất ma tuý mà không nhằm mục đích mua bán, vận chuyển, sản xuất thì bị phạt tù từ 1 năm đến 5 năm, ví dụ với heroin, cocaine, Methamphetamine, Amphetamine, MDMA khối lượng từ 0,1 gam đến dưới 5 gam.",
     "expected_context": "Bộ luật Hình sự 2015, Điều 249"
   },
   {
-    "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
-    "expected_answer": "Cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện.",
-    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V"
+    "question": "Luật Phòng chống ma tuý 2021 quy định những biện pháp cai nghiện nào?",
+    "expected_answer": "Theo Điều 28, có hai biện pháp cai nghiện ma tuý: cai nghiện tự nguyện và cai nghiện bắt buộc. Cai nghiện tự nguyện được thực hiện tại gia đình, cộng đồng hoặc tại cơ sở cai nghiện; cai nghiện bắt buộc được thực hiện tại cơ sở cai nghiện ma tuý công lập.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 28"
   },
   {
-    "question": "Danh mục các chất ma tuý thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
-    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự.",
-    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I"
+    "question": "Danh mục các chất ma tuý thuộc Danh mục I theo quy định pháp luật Việt Nam là gì?",
+    "expected_answer": "Danh mục I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống xã hội; việc sử dụng các chất này chỉ được phép trong phân tích, kiểm nghiệm, nghiên cứu khoa học, điều tra tội phạm theo quy định đặc biệt của cơ quan có thẩm quyền. Nhóm này bao gồm các chất như heroin, cocaine, methamphetamine, MDMA, cần sa.",
+    "expected_context": "Nghị định 73/2018/NĐ-CP về danh mục chất ma tuý và tiền chất, Điều 1"
+  },
+  {
+    "question": "Tội sản xuất trái phép chất ma tuý bị xử lý thế nào theo Điều 248 Bộ luật Hình sự?",
+    "expected_answer": "Theo khoản 1 Điều 248, người sản xuất trái phép chất ma tuý dưới bất kỳ hình thức nào thì bị phạt tù từ 2 năm đến 7 năm. Nếu có tình tiết tăng nặng như có tổ chức, phạm tội 2 lần trở lên, hoặc khối lượng lớn (ví dụ heroin, cocaine, Methamphetamine từ 5 gam đến dưới 30 gam) thì bị phạt tù từ 7 năm đến 15 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 248"
+  },
+  {
+    "question": "Khung hình phạt cơ bản của tội mua bán trái phép chất ma tuý theo Điều 251 là bao nhiêu?",
+    "expected_answer": "Theo khoản 1 Điều 251, người mua bán trái phép chất ma tuý thì bị phạt tù từ 2 năm đến 7 năm. Trường hợp có tình tiết định khung tăng nặng thì bị phạt tù từ 7 năm đến 15 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 251"
+  },
+  {
+    "question": "Tội tổ chức sử dụng trái phép chất ma tuý theo Điều 255 bị phạt như thế nào?",
+    "expected_answer": "Theo khoản 1 Điều 255, người tổ chức sử dụng trái phép chất ma tuý dưới bất kỳ hình thức nào thì bị phạt tù từ 2 năm đến 7 năm. Mức phạt tăng lên 7 đến 15 năm tù nếu phạm tội 2 lần trở lên, đối với 2 người trở lên, đối với người từ đủ 13 đến dưới 18 tuổi, đối với phụ nữ mà biết là có thai, hoặc đối với người đang cai nghiện.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 255"
+  },
+  {
+    "question": "Tội trồng cây thuốc phiện, cây cần sa theo Điều 247 bị xử lý ra sao?",
+    "expected_answer": "Theo khoản 1 Điều 247, người trồng cây thuốc phiện, cây côca, cây cần sa hoặc các loại cây khác có chứa chất ma tuý bị phạt tù từ 6 tháng đến 3 năm khi đã được giáo dục 2 lần và tạo điều kiện ổn định cuộc sống, hoặc đã bị xử phạt hành chính/kết án về hành vi này mà còn vi phạm, hoặc trồng từ 500 đến dưới 3.000 cây. Người tự nguyện phá bỏ, giao nộp trước khi thu hoạch có thể được miễn trách nhiệm hình sự.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 247"
+  },
+  {
+    "question": "Đối tượng nào bị áp dụng biện pháp đưa vào cơ sở cai nghiện bắt buộc theo Luật Phòng chống ma tuý 2021?",
+    "expected_answer": "Theo Điều 32, người nghiện ma tuý từ đủ 18 tuổi trở lên bị đưa vào cơ sở cai nghiện bắt buộc khi: không đăng ký/không thực hiện/tự ý chấm dứt cai nghiện tự nguyện; trong thời gian cai nghiện tự nguyện bị phát hiện sử dụng trái phép chất ma tuý; không thực hiện hoặc tự ý chấm dứt điều trị nghiện các chất dạng thuốc phiện bằng thuốc thay thế; hoặc tái nghiện trong thời gian quản lý sau cai nghiện.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 32"
+  },
+  {
+    "question": "Các hành vi bị nghiêm cấm theo Luật Phòng chống ma tuý 2021 gồm những gì?",
+    "expected_answer": "Theo Điều 5, các hành vi bị nghiêm cấm gồm: trồng cây có chứa chất ma tuý; sản xuất, tàng trữ, vận chuyển, mua bán, xuất nhập khẩu trái phép chất ma tuý và tiền chất; chiếm đoạt chất ma tuý, tiền chất; sử dụng và tổ chức sử dụng trái phép chất ma tuý, cưỡng bức/lôi kéo người khác sử dụng, chứa chấp việc sử dụng; sản xuất, mua bán phương tiện dụng cụ dùng vào việc sản xuất hoặc sử dụng trái phép chất ma tuý.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 5"
+  },
+  {
+    "question": "Theo Luật Phòng chống ma tuý 2021, chất ma tuý và tiền chất được định nghĩa như thế nào?",
+    "expected_answer": "Theo Điều 2, chất ma tuý là chất gây nghiện, chất hướng thần được quy định trong danh mục chất ma tuý do Chính phủ ban hành. Chất gây nghiện là chất kích thích hoặc ức chế thần kinh, dễ gây tình trạng nghiện đối với người sử dụng; chất hướng thần là chất kích thích, ức chế thần kinh hoặc gây ảo giác, nếu dùng nhiều lần có thể dẫn đến nghiện.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 2"
+  },
+  {
+    "question": "Nghị định về danh mục chất ma tuý và tiền chất quy định bao nhiêu danh mục và phân loại ra sao?",
+    "expected_answer": "Có 4 danh mục: Danh mục I là các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống xã hội; Danh mục II là các chất ma tuý được dùng hạn chế trong phân tích, kiểm nghiệm, nghiên cứu khoa học, điều tra tội phạm hoặc y tế; Danh mục III tương tự nhưng mở rộng cho cả lĩnh vực thú y; Danh mục IV là các tiền chất.",
+    "expected_context": "Nghị định 73/2018/NĐ-CP về danh mục chất ma tuý và tiền chất, Điều 1"
+  },
+  {
+    "question": "Luật Phòng, chống ma tuý hiện hành của Việt Nam là luật số mấy, ban hành năm nào?",
+    "expected_answer": "Là Luật Phòng, chống ma tuý số 73/2021/QH, được Quốc hội ban hành năm 2021, có hiệu lực thay thế Luật Phòng, chống ma tuý cũ. Luật quy định về phòng, chống ma tuý; quản lý người sử dụng trái phép chất ma tuý; cai nghiện ma tuý; trách nhiệm của cá nhân, gia đình, cơ quan, tổ chức; quản lý nhà nước và hợp tác quốc tế về phòng, chống ma tuý.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 1"
+  },
+  {
+    "question": "Nghị định 105/2021/NĐ-CP quy định về vấn đề gì và được ban hành khi nào?",
+    "expected_answer": "Nghị định 105/2021/NĐ-CP được Chính phủ ban hành ngày 04 tháng 12 năm 2021, quy định chi tiết và hướng dẫn thi hành một số điều của Luật Phòng, chống ma tuý, trong đó có công tác phối hợp của các cơ quan chuyên trách phòng, chống tội phạm về ma tuý, kiểm soát các hoạt động hợp pháp liên quan đến ma tuý và quản lý người sử dụng trái phép chất ma tuý.",
+    "expected_context": "Nghị định 105/2021/NĐ-CP, Điều 1"
+  },
+  {
+    "question": "Người trồng cây có chứa chất ma tuý có thể được miễn trách nhiệm hình sự trong trường hợp nào?",
+    "expected_answer": "Theo khoản 4 Điều 247 Bộ luật Hình sự, người phạm tội trồng cây có chứa chất ma tuý thuộc khoản 1 nhưng đã tự nguyện phá bỏ, giao nộp cho cơ quan chức năng có thẩm quyền trước khi thu hoạch thì có thể được miễn trách nhiệm hình sự.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 247 khoản 4"
+  },
+  {
+    "question": "Ngoài hình phạt tù, người phạm tội tàng trữ trái phép chất ma tuý còn có thể bị áp dụng hình phạt bổ sung nào?",
+    "expected_answer": "Theo khoản 5 Điều 249, người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 1 năm đến 5 năm, hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 249 khoản 5"
+  },
+  {
+    "question": "Ca sĩ Chi Dân bị cơ quan chức năng xử lý vì liên quan đến ma tuý như thế nào?",
+    "expected_answer": "Theo báo chí, ngày 10/11 Công an TP. Hồ Chí Minh thông tin Công an quận Tân Bình tạm giữ Nguyễn Trung Hiếu (nghệ danh Chi Dân), nam ca sĩ kiêm sáng tác nhạc, do nghi vấn liên quan đến ma tuý tại một địa chỉ ở quận Tân Bình; cơ quan công an đang mở rộng điều tra.",
+    "expected_context": "Báo Công Thương, 2024 — Chi Dân, An Tây và loạt nghệ sĩ dính đến ma tuý"
+  },
+  {
+    "question": "Người mẫu An Tây (Andrea Aybar) bị phát hiện liên quan ma tuý ra sao theo báo chí?",
+    "expected_answer": "Theo báo chí, ngày 9/11 lực lượng chức năng kiểm tra một căn hộ chung cư tại TP. Thủ Đức và phát hiện người mẫu Andrea Aybar (tên thường gọi Nguyễn Thị An hoặc An Tây, sinh năm 1995) cùng bạn bè có biểu hiện sử dụng ma tuý; theo kết quả test nhanh, nữ người mẫu này dương tính với ma tuý.",
+    "expected_context": "Báo Công Thương, 2024 — Chi Dân, An Tây và loạt nghệ sĩ dính đến ma tuý"
+  },
+  {
+    "question": "Theo các bài báo, việc nghệ sĩ dính đến ma tuý gây ra những hậu quả gì đối với bản thân họ và xã hội?",
+    "expected_answer": "Theo báo chí, nghệ sĩ dính ma tuý trước hết phải đối mặt với sự trừng phạt của pháp luật, đồng thời có thể sụp đổ cả sự nghiệp: mất và phải đền hợp đồng với nhà tài trợ, bị hủy buổi diễn, bị tẩy chay khỏi các dự án, và mất mát lớn nhất là lòng tin của người hâm mộ. Do tầm ảnh hưởng của mình, hành vi này còn tác động tiêu cực đến người hâm mộ, cộng đồng và xã hội.",
+    "expected_context": "Báo Công Thương, 2024 — Chi Dân, An Tây và loạt nghệ sĩ dính đến ma tuý"
   }
 ]

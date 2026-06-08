@@ -171,8 +171,50 @@ run_dashboard()
 ## Kiến Trúc Hệ Thống
 
 ```
-[Vẽ diagram kiến trúc ở đây]
+                        ┌─────────────────────────────┐
+                        │   Streamlit UI (app.py)     │
+                        │  - chat đa lượt             │
+                        │  - conversation memory      │
+                        │  - hiển thị nguồn + score   │
+                        └──────────────┬──────────────┘
+                                       │ câu hỏi
+                    ┌──────────────────▼───────────────────┐
+                    │  Query condensation (gpt-4o-mini)    │
+                    │  follow-up → câu hỏi độc lập         │
+                    └──────────────────┬───────────────────┘
+                                       │ standalone query
+              ┌────────────────────────▼────────────────────────┐
+              │       retrieve()  — Task 9 pipeline             │
+              │                                                  │
+              │   ┌─ semantic_search (Task 5) ─┐                 │
+              │   │   OpenAI embed + Weaviate   │                │
+              │   │                              ├─ RRF merge ─┐  │
+              │   └─ lexical_search (Task 6) ───┘             │  │
+              │       BM25 (rank-bm25)                        │  │
+              │                                    rerank (Task 7)│
+              │                                    Jina x-encoder │
+              │                                    (fallback:    │
+              │                                     lexical)     │
+              │            top_score < threshold ? ──► PageIndex │
+              │                                       (Task 8)   │
+              └────────────────────────┬────────────────────────┘
+                                       │ top_k chunks (+source)
+              ┌────────────────────────▼────────────────────────┐
+              │   generate_with_citation()  — Task 10            │
+              │   reorder (chống lost-in-middle)                 │
+              │   → format_context (nhãn nguồn)                  │
+              │   → GPT-4o-mini  → câu trả lời có [Nguồn, Năm]   │
+              └─────────────────────────────────────────────────┘
+
+Data layer: data/standardized/  →  Weaviate Cloud (598 chunks, dim 1536)
+            +  data/drug_legal_corpus.pdf  →  PageIndex (vectorless tree)
 ```
+
+**Luồng xử lý 1 câu hỏi:**
+1. UI nhận câu hỏi → nếu là follow-up, *condense* thành câu hỏi độc lập (memory).
+2. `retrieve()`: hybrid (semantic+BM25, RRF) → rerank → fallback PageIndex nếu yếu.
+3. `generate_with_citation()`: reorder context → GPT-4o-mini sinh câu trả lời có citation.
+4. UI hiển thị câu trả lời + danh sách nguồn (chunk, score, nhánh retrieval).
 
 ---
 
@@ -180,24 +222,36 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Đỗ Thị Huyền | 2A202600880 | Task 1–10 (toàn bộ pipeline cá nhân: thu thập dữ liệu, chunking/indexing, semantic/lexical search, rerank, PageIndex, retrieval pipeline, generation) + Evaluation pipeline (golden dataset, eval_pipeline.py, results.md) + Chatbot Streamlit | ✅ Hoàn thành |
+| _(thành viên 2)_ | | | |
+| _(thành viên 3)_ | | | |
+| _(thành viên 4)_ | | | |
+
+> Cập nhật tên/MSSV các thành viên còn lại của nhóm và phần việc tương ứng trước buổi nộp.
 
 ---
 
 ## Hướng Dẫn Chạy
 
+**Yêu cầu trước khi chạy:**
+- `.env` đã có `OPENAI_API_KEY`, `WEAVIATE_URL`, `WEAVIATE_API_KEY`, `PAGEINDEX_API_KEY`.
+- Đã chạy Task 4 để index dữ liệu lên Weaviate (`python src/task4_chunking_indexing.py`).
+- (Tùy chọn) Đã upload PageIndex (`python src/task8_pageindex_vectorless.py`) cho nhánh fallback.
+
 ```bash
-# Cài đặt dependencies
+# Cài đặt dependencies (từ thư mục gốc dự án)
 pip install -r requirements.txt
 
-# Chạy app
-streamlit run app.py
-# hoặc
-chainlit run app.py
+# Chạy chatbot (chạy từ thư mục GỐC dự án để import được package src/)
+streamlit run group_project/app.py
 ```
+
+App mở tại http://localhost:8501. Trong sidebar có thể chỉnh `top_k`, ngưỡng
+fallback PageIndex, bật/tắt hiển thị nguồn và conversation memory.
+
+> Lưu ý: nếu `JINA_API_KEY` hết hạn/quota, reranking tự fallback sang
+> lexical-overlap (không sập). Weaviate sandbox sống 14 ngày → hết hạn cần tạo
+> lại cluster và chạy lại Task 4.
 
 ---
 

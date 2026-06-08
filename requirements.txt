@@ -6,10 +6,13 @@ requests>=2.31.0
 crawl4ai>=0.3.0
 
 # Task 3 - Document conversion
-markitdown>=0.1.0
+markitdown[docx]>=0.1.0   # [docx] để đọc file .docx
+beautifulsoup4>=4.12.0    # bóc nội dung chính từ HTML bài báo trước khi convert
 
 # Task 4 - Chunking & Indexing
 langchain-text-splitters>=0.2.0
+langchain-experimental>=0.0.60   # SemanticChunker cho bài báo (news)
+langchain-openai>=0.1.0          # OpenAIEmbeddings dùng cho SemanticChunker
 sentence-transformers>=2.2.0
 weaviate-client>=4.5.0
 # chromadb>=0.4.0        # Alternative
@@ -23,6 +26,7 @@ rank-bm25>=0.2.2
 
 # Task 8 - PageIndex
 pageindex>=0.1.0
+fpdf2>=2.7.0              # tạo PDF tiếng Việt từ markdown để upload lên PageIndex
 
 # Task 10 - Generation
 openai>=1.30.0
